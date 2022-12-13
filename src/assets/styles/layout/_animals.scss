@@ -1,0 +1,351 @@
+.animals {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+  @media (max-width: $size-large) {
+    padding-bottom: 140px;
+  }
+  @media (max-width: $size-medium) {
+    padding-bottom: 100px;
+  }
+  @media (max-width: $size-small) {
+    padding-bottom: 60px;
+  }
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  &__arrow{
+    &_left{
+      z-index: 10;
+      content: "";
+      position: absolute;
+      top: 405px;
+      left: -82px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+      background: url(/src/assets/icons/arrow-left.svg) center center no-repeat, $color_main;
+      &:hover{
+        background: url(/src/assets/icons/arrow-left.svg) center center no-repeat, $color_hover;
+      }
+      &:active{
+        transition: transform 0.2s;
+        transform: scale(0.98);
+        background: url(/src/assets/icons/arrow-left.svg) center center no-repeat, $color_active;
+      }
+      @media (max-width: $size-large) {
+        top: 371px;
+        left: 325px;
+      }
+      @media (max-width: $size-medium) {
+        top: 342px;
+        left: 222px;
+      }
+      @media (max-width: $size-small) {
+        display: none;
+      }
+    }
+    &_right{
+      z-index: 10;
+      content: "";
+      position: absolute;
+      top: 405px;
+      right: -82px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+      background: url(/src/assets/icons/arrow-right.svg) center center no-repeat, $color_main;
+      &:hover {
+        background: url(/src/assets/icons/arrow-right.svg) center center no-repeat, $color_hover;
+      }
+      &:active {
+        transition: transform 0.2s;
+        transform: scale(0.98);
+        background: url(/src/assets/icons/arrow-right.svg) center center no-repeat, $color_active;
+      }
+      @media (max-width: $size-large) {
+        top: 371px;
+        right: 324px;
+      }
+      @media (max-width: $size-medium) {
+        top: 342px;
+        right: 222px;
+      }
+      @media (max-width: $size-small) {
+        display: none;
+      }
+    }
+  }
+}
+
+.animals__carousel {
+  display: flex;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 80px;
+  @media (max-width: $size-medium) {
+    margin-bottom: 60px;
+  }
+  @media (max-width: $size-small) {
+    margin-bottom: 20px;
+  }
+}
+.carousel {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: calc(300% + 60px);
+  left: calc(-100% - 30px);
+  gap: 30px;
+}
+
+.carousel__cards {
+  width: 1160px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  @media (max-width: $size-large) {
+    row-gap: 92px;	
+  }
+  @media (max-width: $size-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $size-small) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
+.animals {
+  &:before {
+    content: '';
+    position: absolute;
+    background-image: url(/src/assets/images/animals__palm.png);
+    background-repeat: no-repeat;
+    width: 880px;
+    height: 460px;
+    left: 0;
+    bottom: 0;
+    @media (max-width: 1599px) {
+      width: 386px;
+      height: 202px;
+      background-size: contain;
+      background-image: url(/src/assets/images/animals__palm-desktop.png);
+    }
+    @media (max-width: 767px) {
+      width: 200px;
+      height: 202px;
+      background-size: contain;
+      background-position: left top;
+      background-image: url(/src/assets/images/animals__palm-tablet.png);
+    }
+    @media (max-width: 630px) {
+      width: 138px;
+      height: 72px;
+      background-size: contain;
+      background-position: left bottom;
+      background-image: url(/src/assets/images/animals__palm-mobile.png);
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    background-image: url(/src/assets/images/animals__flower.png);
+    background-repeat: no-repeat;
+    width: 368px;
+    height: 275px;
+    right: 0;
+    bottom: 0;
+    @media (max-width: 1599px) {
+      width: 241px;
+      height: 180px;
+      background-size: contain;
+    }
+    @media (max-width: 767px) {
+      width: 175px;
+      height: 131px;
+      background-size: contain;
+      background-position: left top;
+      background-image: url(/src/assets/images/animals__flower-tablet.png);
+    }
+    @media (max-width: 630px) {
+      width: 85px;
+      height: 71px;
+      background-size: contain;
+      background-position: right bottom -4px;
+      background-image: url(/src/assets/images/animals__flower-mobile.png);
+    }
+  }
+}
+
+.card {
+  position: relative;
+  max-height: 426px;
+  border-radius: 5px;
+  background-color: $white;
+  overflow: hidden;
+  transition: all ease 1s;
+  width: 366px;
+  height: 426px;
+  &:nth-child(n+7){
+    display: none;
+  }
+  @media (max-width: $size-large) {
+    width: 294px;
+    height: 354px;
+  }
+  @media (max-width: $size-medium) {
+    width: 285px;
+    height: 332px;
+    &:nth-child(n+5){
+      display: none;
+    }
+  }
+  @media (max-width: $size-small) {
+    max-width: 285px;
+    max-height: 332px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 5px; 
+    padding: 2px;
+    background: $color_main;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  &__image-container{
+    overflow: hidden;
+  }
+  &__image{
+    transition: all ease 1s;
+  }
+  &__description {
+    padding: 8px 14px 14px 14px;
+    display:flex;
+    justify-content: space-between;
+    background-color: $white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all ease 1s;
+    &-text {
+      display:flex;
+      flex-direction: column;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+    @media (max-width: $size-medium) {
+      font-size: 13px;
+      margin-bottom: -4px;
+    }
+  }
+  &__origin {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    @media (max-width: $size-medium) {
+      font-size: 12px;
+    }
+  }
+  &__icon {
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    
+    @media (max-width: $size-medium) {
+      width: 28px;
+      height: 28px;
+    }
+    @media (max-width: $size-small) {
+
+    }
+    &_grass {
+      background: url(/src/assets/icons/banana-bamboo_icon.svg) center center no-repeat;
+      background-size: contain;
+    }
+    &_meat {
+      background: url(/src/assets/icons/meet-fish_icon.svg) center center no-repeat;
+      background-size: contain;
+      transform: scale(1.3);
+    }
+  }
+  &:hover {
+    background-color: $color_dark-blue;
+    transition: all ease 1s;
+  }
+  &:hover::after {
+    background: $color_dark-blue;
+    transition: all ease 1s;
+  }
+  &:hover .card__description{
+    color: $white;
+    background-color: $color_dark-blue;
+    transition: all ease 1s;
+    transform: translateY(-10px);
+  }
+  &:hover .card__image {
+    -webkit-transition: 1s, 
+    -webkit-transform 1s;
+    transition: all ease 1s;
+    transform: scale(1.1);
+  }
+  &:hover .card {
+    transform: perspective(600px) rotateY(-180deg);
+  }
+}
+
+@keyframes move-right{
+  0%{left: calc(-100% - 30px);}
+  100%{left: 0;}
+}
+
+@keyframes move-left{
+  0%{left: calc(-100% - 30px);}
+  100%{left: calc(-200% - 60px);}
+}
+
+.transition-right{
+  transition: 0,5s;
+  animation-name: move-right;
+  animation-duration: 2s;
+
+}
+.transition-left{
+  transition: 0,5s;
+  animation-name: move-left;
+  animation-duration: 2s;
+}
+
+.disabled-right {
+  pointer-events: none;
+  transition: transform 0.2s;
+  transform: scale(0.98);
+  background: url(/src/assets/icons/arrow-right.svg) center center no-repeat, $gray;
+}
+.disabled-left {
+  pointer-events: none;
+  transition: transform 0.2s;
+  transform: scale(0.98);
+  background: url(/src/assets/icons/arrow-left.svg) center center no-repeat, $gray;
+}

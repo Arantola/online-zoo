@@ -1,0 +1,234 @@
+.footer {
+  background: #111115;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  @media (max-width: $size-medium) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  @media (max-width: $size-small) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &__top{
+    display: flex;
+    @media (max-width: $size-small) {
+      margin-bottom: 3px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__button {
+    margin-top: 36px;
+    margin-bottom:44px;
+    @media (max-width: $size-medium) {
+      margin-top: 36px;
+      margin-bottom:67px;
+    }
+    @media (max-width: $size-small) {
+      margin-top: 86px;
+      margin-bottom:30px;
+    }
+  }
+  &__bottom{
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    @media (max-width: $size-small) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+    margin-right: 171px;
+    @media (max-width: $size-large) {
+      margin-right: 81px;
+    }
+    @media (max-width: $size-medium) {
+      margin-left: 0;
+      margin-right: 75px;
+      .menu__item:not(:last-child){
+        margin-right: 37px;
+      }
+    }
+    @media (max-width: $size-small) {
+      margin-left: 0;
+      margin-right: 10px;
+      .menu__item:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+  &__designer{
+    min-width: 220px;
+    @media (max-width: $size-medium) {
+      margin-top: 10px;
+    }
+    @media (max-width: $size-small) {
+      padding-bottom: 30px;
+    }
+    &-name {
+      margin-bottom: 5px;
+    }
+  }
+  &__figma-link {
+    color: $white;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 130%;
+    @media (max-width: $size-medium) {
+      font-size: 15px;
+      line-height: 120%;
+    }
+    &:hover{
+      color: $color_active;
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: $size-medium) {
+    .footer__social{
+      position: absolute;
+      top: -209px;
+      right: -14px;
+    }
+    .social__item:not(:last-child){
+      margin-bottom:20px;
+    }
+  }
+  @media (max-width: $size-small) {
+    .footer__social{
+      position: absolute;
+      top: -140px;
+      right: 40px;
+      display: flex;
+      flex-direction:row;
+    }
+    .social__item:not(:last-child){
+      margin-bottom:0;
+      margin-right: 18px;
+    }
+  }
+}
+
+.footer__logo {
+  &-container {
+    width: 82px;
+    height: 52px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid $white;
+    border-radius: 2px;
+    @media (max-width: $size-small) {
+      align-self: center;
+      white-space: nowrap;
+      width: 160px;
+      height: 23px;
+      border: none;
+    }
+  }
+  &-text {
+    position: relative;
+    display: block;
+    margin-top: 3px;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+    color: $white;
+    @media (max-width: $size-small) {
+      width: 160px;
+      height: 23px;
+    }
+    &::after{
+      content: " ";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      bottom: -24px;
+      left: 10px;
+      background-image: url("/src/assets/icons/bamboo_white.svg");
+      background-repeat: no-repeat;
+      @media (max-width: $size-small) {
+        left: 88px;
+      }
+    }
+  }
+}
+
+
+.subscribe {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: $size-large) {
+    margin-right: 35px;
+  }
+  @media (max-width: $size-medium) {
+    display: none;
+  }
+  &__container {
+    display: flex;
+  }
+  &__subtitle {
+    margin-bottom: 14px;
+    @extend %subtitle;
+    color: $white;
+  }
+  &__button {
+    width: 129px;
+    height: 42px;
+    background: #F1F3F2;
+    border: 1px solid #333B41;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #e2e2e2;
+    }
+    &:active{
+      border-color: $color_active;
+      color: $color_active;
+    }
+  }
+  &__input {
+    width: 228px;
+    height: 42px;
+    margin-right: 10px;
+    padding: 10px;
+    color: #BDBDBD;
+    background: transparent;
+    border-radius: 2px;
+    border: 1px solid $color_mistake;
+    &:focus{
+      border: 0.7px solid $color_active;
+    }
+    &:valid{
+      border: 0.7px solid #FE9013;
+      & + .subscribe__button {
+        color: $color_active;
+        border: 1px solid $color_active;
+      }
+    }
+    &:invalid{
+      border: 0.7px solid $color_mistake;
+      &::-moz-placeholder { 
+        color: $color_mistake; 
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+      }
+      &::-webkit-input-placeholder {
+        color: $color_mistake;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+      }
+      & + .subscribe__button {
+        color: red;
+        border: 1px solid red;
+        &:hover {
+          background: #F1F3F2;
+        }
+      }
+    }
+  } 
+}

@@ -1,0 +1,131 @@
+.watch {
+  overflow: hidden;
+  height: 700px;
+  background: url(/src/assets/images/GiantPanda.png) center/cover no-repeat;
+  background-clip: border-box;
+   @media (max-width: $size-large) {
+    height: 504px;
+  }
+  @media (max-width: $size-medium) {
+    height: 373px;
+  }
+  @media (max-width: $size-small) {
+    height: 221px;
+    overflow: visible;
+  }
+  &__inner{
+    padding-top: 86px;
+    margin-left: auto;
+    width: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $size-large) {
+      width: auto;
+      margin-right: 50px;
+      padding-top: 42px;
+    }
+    @media (max-width: $size-medium) {
+      margin: 0;
+      padding-top: 80px;
+    }
+    @media (max-width: $size-small) {
+      padding-top: 74px;
+    }
+  }
+  .slogan{
+    margin-bottom: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    heigth: 400px;
+    @media (max-width: $size-large) {
+      margin-bottom: 40px;
+      align-self: flex-end;
+      width: 400px;
+      heigth: 320px;
+    }
+    @media (max-width: $size-medium) {
+      margin-bottom: -15px;
+      align-self: flex-end;
+      width: 255px;
+      heigth: 204px;
+    }
+    @media (max-width: $size-small) {
+      margin-bottom: 0;
+      align-self: flex-end;
+      width: 128px;
+      height: 102px;
+    }
+    &::after{
+      content: '';
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      width: 465px;
+      height: 465px;
+      right: 113px;
+      bottom: 10px;
+      background: $color_main;
+      @media (max-width: $size-large) {
+        width: 367px;
+        height: 367px;
+        right: 93px;
+        bottom: 10px;
+      }
+      @media (max-width: $size-medium) {
+        width: 237px;
+        height: 237px;
+        right: 58px;
+        bottom: 8px;
+      }
+      @media (max-width: $size-small) {
+        width: 119px;
+        height: 119px;
+        right: 28px;
+        bottom: 2px;
+      }
+    }
+    &__text{
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 106px;
+      line-height: 75%;
+      text-align: center;
+      text-transform: uppercase;
+      color: $white;
+      z-index: 2;
+      &_yellow{
+        color: $yellow;
+      }
+      @media (max-width: $size-large) {
+        font-size: 85px;
+      }
+      @media (max-width: $size-medium) {
+        font-size: 55px;
+      }
+      @media (max-width: $size-small) {
+        font-size: 28px;
+      }
+    }
+  }
+  &__button{
+    @media (max-width: $size-large) {
+      margin-right: 49px;
+      align-self: flex-end;
+    }
+    @media (max-width: $size-medium) {
+      position: absolute;
+      bottom: -60px;
+      left: -6px;
+    }
+    @media (max-width: $size-small) {
+      position: absolute;
+      bottom: -120px;
+      left: 0;
+    }
+  }
+}

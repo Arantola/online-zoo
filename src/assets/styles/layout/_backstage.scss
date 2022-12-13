@@ -1,0 +1,118 @@
+
+.backstage{
+  position: relative;
+  &__inner {
+    padding-top: 140px;
+    padding-bottom: 180px;
+    display: flex;
+    @media (max-width: $size-large) {
+      padding-top: 105px;
+      padding-bottom: 142px;
+    }
+    @media (max-width: $size-medium) {
+      padding-top: 68px;
+      padding-bottom: 80px;
+    }
+    @media (max-width: $size-small) {
+      padding-top: 110px;
+      padding-bottom: 40px;
+    }
+  }
+  &__photo {
+    width: 609px;
+    height: 403px;
+    margin-right: 90px;
+    background: url(/src/assets/images/bamboo-cap.png) center center no-repeat;
+    background-size: cover;
+    @media (max-width: $size-large) {
+      margin-right: 31px;
+    }
+    @media (max-width: $size-medium) {
+      display: none;
+    }
+  }
+  .text-container {
+    width: 465px;
+    display: flex;
+    flex-direction: column;
+    color: $color_dark-blue;
+    @media (max-width: $size-large) {
+      margin-top: -10px;
+      min-width: 454px;
+    }
+    @media (max-width: $size-medium) {
+      width:495px;
+    }
+    @media (max-width: 620px) {
+      width: 298px;
+      max-width:298px;
+      white-space: wrap;
+    }
+    .title-2{
+      @extend %title-two;
+      margin-bottom: 20px;
+      @media (max-width: $size-medium) {
+        margin-right: 4px;
+      }
+      @media (max-width: $size-small) {
+        margin-right: 2px;
+        font-size: 24px;
+        margin-bottom: 10px;
+        width:298px;
+      }
+    }
+    .noitce{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      margin-bottom: 54px;
+      @media (max-width: $size-medium) {
+        margin-bottom: 30px;
+      }
+      @media (max-width: $size-small) {
+        margin-bottom: 20px;
+        width:298px;
+      }
+    }
+    .subtitle{
+      @extend %subtitle;
+      margin-bottom: 34px;
+      @media (max-width: $size-medium) {
+        margin-right: 4px;
+        margin-bottom: 20px;
+      }
+      @media (max-width: $size-small) {
+        margin-right: 2px;
+        margin-bottom: 10px;
+        width:298px;
+      }
+    }
+    .text {
+      @extend %body-text;
+      @media (max-width: $size-small) {
+        width:298px;
+      }
+    }
+  }
+  &__image-plant{
+    position:absolute;
+    z-index: -1;
+    width: 200px;
+    height: 605px;
+    top: 165px;
+    right: -28px;
+    transform: scale(1.5);
+    @media (max-width: $size-large) {
+      display: none;
+    }
+    @media (max-width: $size-medium) {
+      display: block;
+      top: 50px;
+      right: -90px;
+      transform: scale(1.19);
+    }
+    @media (max-width: $size-small) {
+      display: none;
+    }
+  }
+}

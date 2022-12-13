@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+%roboto {
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+*{
+  @extend %roboto;
+}
+
+%title-one {
+  @extend %roboto;
+  font-weight: 700;
+  font-size: 114px;
+  line-height: 80%;
+  font-size: 114px;
+  text-transform: uppercase;
+}
+
+%title-two {
+  @extend %roboto;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+}
+
+%title-three {
+  @extend %roboto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+}
+
+%subtitle {
+  @extend %roboto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+%interactive-text {
+  @extend %roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+%body-text {
+  @extend %roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+%small-paragraph {
+  @extend %roboto;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+}
